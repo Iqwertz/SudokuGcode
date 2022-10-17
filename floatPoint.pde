@@ -15,4 +15,9 @@ class floatPoint {
    x+=x_;
    y+=y_;
   }
+  
+  void update(float x_, float y_) {
+    x = x_;
+    y = y_;
+  }
 }

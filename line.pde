@@ -24,4 +24,12 @@ class continuesLine {
       points[i].translate(x,y); 
      }
   }
+  
+  ////temp function because I dont want to recalculate the points for the numbers
+  void flipX(float h){
+      for(int i=0; i<pointCount; i++){
+      float transform = points[i].y-h/2;
+      points[i].update(points[i].x,h/2-transform);
+     }
+  }
 }

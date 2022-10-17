@@ -1,5 +1,3 @@
-PrintWriter OUTPUT;
-
 void generateGcode(continuesLine[] gcodePaths, int pathsLineCount) {
   String gname = "output/gcode.nc";
   OUTPUT = createWriter(sketchPath("") + gname);

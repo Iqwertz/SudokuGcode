@@ -8,15 +8,19 @@ import controlP5.*;
 
 /////////////Settings////////////
 int gridSize = 9;
-int gridDimension = 100;
+int gridDimension = 500;
 
 ////////////Programm Vars////////////
 int pathCount = 0;
 continuesLine[] paths = new continuesLine[5000];
 
 Riddle sudoku;
+PrintWriter OUTPUT;
 
 void setup() {
+    size(500, 500);
+    background(255);
+
   float cellSize = gridDimension/gridSize;
 
   //generate Row lines
@@ -52,6 +56,8 @@ void setup() {
   generateSudoku();
   addSudokuNumbers();
   generateGcode(paths, pathCount);
+  generateSVG(paths, pathCount);
+  generateImage(paths, pathCount);
 }
 
 void generateSudoku() {
@@ -77,4 +83,5 @@ void addSudokuNumbers() {
 }
 
 void draw() {
+  exit();
 }
