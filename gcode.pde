@@ -1,18 +1,22 @@
 PrintWriter OUTPUT;
 
-void generateGcode(continuesLine[] gcodePaths, int pathsLineCount){
+void generateGcode(continuesLine[] gcodePaths, int pathsLineCount) {
   String gname = "output/gcode.nc";
-        OUTPUT = createWriter(sketchPath("") + gname);
+  OUTPUT = createWriter(sketchPath("") + gname);
+
+  for (int i=0; i<pathsLineCount; i++) {
+    continuesLine conLine = gcodePaths[i];
+
+    OUTPUT.println("G01 X" + conLine.points[0].x + " Y" + conLine.points[0].y);
+    OUTPUT.println("M03S300");
+    for (int j=1; j<conLine.pointCount; j++) {
+      OUTPUT.println("G01 X" + conLine.points[j].x + " Y" + conLine.points[j].y);
+    }
+    OUTPUT.println("M05");
+  }
+
+  OUTPUT.flush();
+  OUTPUT.close();
   
-   for(int i=0; i<pathsLineCount; i++){
-      continuesLine conLine = gcodePaths[i];
-      
-      for(int j=0; j<conLine.pointCount; j++){
-         println(conLine.points[j].x, conLine.points[j].y);
-         OUTPUT.println("G01 X" + conLine.points[j].x + " Y" + conLine.points[j].y);
-       }
-   }
-   
-           OUTPUT.flush();
-        OUTPUT.close();
+  println("Saved Gcode");
 }
