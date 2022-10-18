@@ -15,6 +15,7 @@ import de.sfuhrm.sudoku.output.*;
 // Julius Hussl, iqwertz.github.io, <juliushussl@gmail.com>
 //
 // Sudoku Lib:  https://github.com/sfuhrm/sudoku
+// Depictor: https://github.com/Iqwertz/Depictor
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////Settings////////////
