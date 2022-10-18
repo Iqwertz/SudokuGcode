@@ -1,13 +1,13 @@
-final float numberWidth = 10.0;
+final float numberWidth = 10.0; //maximum width of the generated numbers
 
-continuesLine getScaledNumber(int number, float width_) {
+continuesLine getScaledNumber(int number, float width_) { //returns the path for the given number and scales it to the given width
     continuesLine numberLine = getNumberByInt(number);
     float scaleFactor = width_ / numberWidth;
     numberLine.scale(scaleFactor);
     return numberLine;
 }
 
-continuesLine getNumberByInt(int number) {
+continuesLine getNumberByInt(int number) { //gets the path for a number
     continuesLine numberLine;
     switch(number) {
         case 1:
@@ -45,6 +45,9 @@ continuesLine getNumberByInt(int number) {
     return numberLine;
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//The following 10 fucntions store the paths for each number. The numbers where generated with a inkscape plugins and vscode search and replace//
 continuesLine zero() {
     continuesLine line = new continuesLine(4.514592, 9.337609);
     line.add(3.271047, 8.914275);
@@ -63,7 +66,7 @@ continuesLine zero() {
     line.add(6.604805, 8.914275);
     line.add(5.348031, 9.337609);
     line.add(4.514592, 9.337609);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -72,7 +75,7 @@ continuesLine one() {
     line.add(4.358457, 8.116806);
     line.add(5.615231, 9.373580);
     line.add(5.615231, 0.615850);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -91,7 +94,7 @@ continuesLine two() {
     line.add(6.319621, 4.783218);
     line.add(2.152423, 0.616020);
     line.add(7.986500, 0.616020);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -124,7 +127,7 @@ continuesLine three() {
     line.add(3.966433, 1.115439);
     line.add(3.218983, 1.532159);
     line.add(2.761253, 1.951524);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -133,7 +136,7 @@ continuesLine four() {
     line.add(6.042591, 9.383900);
     line.add(1.875393, 3.536594);
     line.add(8.132804, 3.536594);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -155,7 +158,7 @@ continuesLine five() {
     line.add(2.986582, 0.973454);
     line.add(2.563248, 1.390174);
     line.add(2.153143, 2.223613);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -183,7 +186,7 @@ continuesLine six() {
     line.add(3.565422, 5.626808);
     line.add(2.731982, 4.793368);
     line.add(2.308648, 3.536594);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -191,7 +194,7 @@ continuesLine seven() {
     continuesLine line = new continuesLine(2.083703, 9.314464);
     line.add(7.917780, 9.314464);
     line.add(3.750582, 0.556734); 
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -225,7 +228,7 @@ continuesLine eight() {
     line.add(7.176920, 8.914275);
     line.add(5.920146, 9.337609);
     line.add(4.253267, 9.337609);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }
 
@@ -253,6 +256,6 @@ continuesLine nine() {
     line.add(4.415286, 0.626170);
     line.add(3.171741, 1.042890);
     line.add(2.748407, 1.876329);
-    line.flipX(numberWidth);
+    line.flipY(numberWidth);
     return line;
 }

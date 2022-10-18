@@ -1,4 +1,4 @@
-void generateGcode(continuesLine[] gcodePaths, int pathsLineCount) {
+void generateGcode(continuesLine[] gcodePaths, int pathsLineCount) {  //generates the gcode file from a given path array.
   String gname = "output/gcode.nc";
   OUTPUT = createWriter(sketchPath("") + gname);
 

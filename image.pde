@@ -1,4 +1,4 @@
-void generateImage(continuesLine[] gcodePaths, int pathsLineCount) {
+void generateImage(continuesLine[] gcodePaths, int pathsLineCount) {  //generates a image from the given paths array
 
   stroke(0,0,0);
   strokeWeight(2);
