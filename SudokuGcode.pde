@@ -23,6 +23,10 @@ int gridSize = 9;  //Number of rows and cols in the grid (currently only 9 works
 int gridDimension = 500;  //Width and Height of the grid
 boolean generateSvgSolution = true;  //Should the generated SVG include the solution?
 
+String penUpCommand = "M05";
+String penDownCommand = "M03S500";
+String startGcode = "";
+String endGcode = "";
 ////////////Programm Vars////////////
 final String settings_path = "settings.json";  //path to the settings file (an external settings file is used to be compatible with Depictor)
 
