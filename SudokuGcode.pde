@@ -19,6 +19,7 @@ import de.sfuhrm.sudoku.output.*;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////Settings////////////
+boolean useSettingsFile = true;
 int gridSize = 9;  //Number of rows and cols in the grid (currently only 9 works, because the sudoku generater can only generate 9x9 sudokus)
 int gridDimension = 500;  //Width and Height of the grid
 boolean generateSvgSolution = true;  //Should the generated SVG include the solution?
@@ -30,7 +31,7 @@ String endGcode = "";
 String rotation = "up";
 boolean invert = false; 
 ////////////Programm Vars////////////
-final String settings_path = "../settings.json";  //path to the settings file (an external settings file is used to be compatible with Depictor)
+final String settings_path = "settings.json";  //path to the settings file (an external settings file is used to be compatible with Depictor)
 
 int pathCount = 0;  //elements in the paths array
 continuesLine[] paths = new continuesLine[5000]; //all paths of the sudoku (without solution)
@@ -47,7 +48,6 @@ PrintWriter JSON;
 void setup() {
   size(500, 500);
   background(255);
-
   setSettings(); //set settings from the settings.json
 
   float cellSize = gridDimension/gridSize;
@@ -95,8 +95,8 @@ void setup() {
 }
 
 void setSettings() {  //Checkis if a settings file exists and updates settings if
-  File f = dataFile(settings_path);
-  if (f.isFile()) {
+  if (useSettingsFile) {
+    println("using external settings");
     JSONObject json = loadJSONObject(settings_path);
     gridDimension = json.getInt("gridSize");
     generateSvgSolution = json.getBoolean("generateSvgSolution");
@@ -104,6 +104,8 @@ void setSettings() {  //Checkis if a settings file exists and updates settings i
     invert = json.getBoolean("invert");
     println(invert);
     println(rotation);
+  }else{
+    println("using fixed settings"); 
   }
 }
 
